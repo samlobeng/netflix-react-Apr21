@@ -28,7 +28,10 @@ class RowOfMovies extends React.Component {
         <Carousel.Item>
           {this.state.movies.Search &&
             this.state.movies.Search.slice(0, 6).map((movie) => (
-              <SingleMovie img={movie.Poster} title={movie.Title} id={movie.imdbID} />
+              <SingleMovie img={movie.Poster} title={movie.Title} id={movie.imdbID} onClick={() => {
+                // setSelected(dish)
+                this.props.history.push('/detail/' + this.state.movies.imdbID)
+            }} />
             ))}
         </Carousel.Item>
         <Carousel.Item>
